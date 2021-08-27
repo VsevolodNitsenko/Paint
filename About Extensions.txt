@@ -1,0 +1,76 @@
+   // How to use CustomizeMap ?
+   // just call customMap and use one of this methods:
+   /* customMap.get(name) 
+      customMap.edit(name, value)
+      customMap.restoreDefault()
+      customMap.upload(new Map)
+      customMap.view() // returns current Map
+      custommap.delete(name) // delete empty name
+    */
+    // customMap manages your style and can be change personal for you.
+
+
+    // How to Name Extensions?
+    // Create files like "extension-number.txt"
+    // they will loading from zero to the biggest number.
+
+
+    function upload(i) {
+    var script = document.createElement("script")
+    script.src = "extension-" + i + ".txt"
+    document.body.append(script)
+    script.onload = function() {
+     console.warn("extension (" + i + ") is connected.")
+     upload(i+1)
+        }
+    script.onerror = function() { 
+     console.warn("extension (" + i + ") is not found.")
+     document.body.removeChild(this)
+        }
+      }      
+     if(connection.extensionsAllow) { upload(0) }
+  
+
+  // How to Write Extensions?
+  
+   /* Tools (Brushes) List Structure: 
+       {  name: "", 
+          start: function(event) {  },
+          move: function(event) {  },
+          end: function() { canvas.save() }
+        }
+  
+     Start Event Options: {
+         baseContext: Real Canvas,
+         activeContext: fake Canvas,
+         x: new point-X, y: now point-Y
+       }
+  
+     Move Event Options: 
+       { 
+         baseContext: Real Canvas,
+         activeContext: fake Canvas,
+         lx: last point-X, ly: last point-Y,
+         x: now point-X, y: now point-Y,
+         originalEvent: mousemoveEvent / touchmoveEvent
+       };
+  
+     Add Extension: tools.controls.brushes.push({ extension })
+    */
+  
+   /* Tools (Figures) List Structure: 
+        { name: "",
+          points: Number,
+          content: function(canvasContext, pointArray) {  } ,
+          demo: function(width, height) { return Path2D }
+         }
+     Add Extension: tools.mode.weapons.push({ extension })
+   */
+  
+   /* Tools (Images) List Structure:
+          content: function(image, canvasContext) { canvasContext.drawImage(image) },
+          demo: function(dv) { dv.style.border="" } 
+     };
+    Add Extension: tools.image.events.push({ extention })
+    */
+  

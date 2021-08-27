@@ -1,0 +1,111 @@
+* {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+ }
+
+::-webkit-scrollbar { 
+      width: 0px;
+      height: 0px;
+      background-color: white;
+ }
+::-webkit-scrollbar-thumb { 
+       background-color: grey;
+       border-radius: 10px;
+ }
+
+ #Body > div {
+       top: 0
+  }
+
+ .ColorSwch {
+       border: 2px solid;`
+  }
+
+ .paletteBody {
+       position: fixed;
+       z-index: 2;
+       border: 1px solid;
+  }
+
+  #messange {
+      color: gray;
+      position: fixed;
+      margin-left: 80px;
+      margin-top: 20px;
+      font-size: 105%;
+   }
+
+ .toog {
+     border:1px solid;
+     margin-top: 8px;
+     width: 20px;
+     height: 20px;
+     border-radius: 5px;
+  }
+ .toog:hover {
+      border-radius: 15px;
+  }
+   .toog:active {
+       border: 2px solid;
+  }
+
+ .Tools_bu {
+       text-align: center;
+       border: 1px dotted;
+       background-color: white;
+       cursor: pointer;
+    }
+ .Tools_bu:active {
+      border-bottom: 2px solid;
+  }
+
+ .paletteButton {
+      cursor: pointer;
+       background-color: white;
+  }
+ .paletteButton:active {
+       background-color: gray;
+  }
+
+ .Canvas {
+     background-color: rgba(255, 255, 255, 0.6);
+   }
+
+  #image_frame {
+        margin-left: 10px;
+        margin-top: 10px;
+  }
+
+  #start {
+        z-index: 5;
+        position: fixed;
+        width: 500px;
+        text-align: center;
+        padding: 10px;
+        font-size: 115%;
+        border: 1px solid;
+        cursor: pointer;
+        background-color: #fff3e7;
+  }
+ #start:hover {
+       background-color: #efd6be;
+  }
+  #start:active {
+  border-top-width: 2px;
+   }
+
+  .sizes {
+       z-index: 5;
+       position: fixed;
+       width: 380px;
+       height: 28px;
+       font-size: 100%;
+       border: 1px solid grey;
+  }
+
+  #table {
+       top: 0;
+       position: fixed;
+       border-radius: 80px;
+  }
