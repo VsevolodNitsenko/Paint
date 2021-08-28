@@ -1,0 +1,19 @@
+* {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+ }
+
+::-webkit-scrollbar { 
+      width: 0px;
+      height: 0px;
+      background-color: white;
+ }
+::-webkit-scrollbar-thumb { 
+       background-color: grey;
+       border-radius: 10px;
+ }
+
+ #Body > div {
+       top: 0
+  }
