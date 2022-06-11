@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html>
+   <head> 
+      <title>Paint</title>
+      <link rel="icon" href="icon.png"/>
+      <link rel="stylesheet" href="Paint.css"/>
+     </head>
+   <body style="margin: 0; background-color: whitesmoke; touch-action: none" id="Body">
+  <div id="preload" style="display: none; background-image: url('Default background.png')">
+    <input class="sizes" placeholder=" Width"/>
+    <input class="sizes" placeholder=" Height" style="left: 20px;"/>
+    <div id="start">Start Work</div>
+    <img id="table" src="Table.png"/>
+     </div>
+  <div id="content" style="display: none">
+   <p id="messange" style="top: 0; z-index: 30"></p>
+  </div>
+  <script type="text/javascript"> 
+  var canseled_scripts = []
+  function canselJS(name) { 
+    var p = document.createElement("p")
+    p.innerHTML = name
+    p.style.color = "gray"
+    p.style.fontSize="65%"
+    p.onclick = function() { window.open(name) }
+    canseled_scripts.push(p)
+   }
+     </script>  
+  <script type="text/javascript"  src="Code Space.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Base Elements.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript" src="Head.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Canvas Element.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Bookmark Element.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Palet Element.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Panel Element.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Tools Element.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="Load and Tune.js" onerror="canselJS(this.src)"></script>
+  <script type="text/javascript"  src="About Extensions.js" onerror="canselJS(this.src)"></script>
+  
+  <div id="def"> <h3>Why it's not working? </h3><br> wait a few minutes, <br> enable JavaScript, <br> check browser version.</div>
+  <script type="text/javascript"> 
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("def").style.display = "none"
+          })
+    window.addEventListener("load", function() {
+     if(canseled_scripts.length) { 
+          document.getElementById("def").style.display="block"
+          for(var i = 0; i < canseled_scripts.length; i++) {
+            document.getElementById("def").append(canseled_scripts[i])
+           }
+         } else {
+            document.getElementById("def").style.display="none"
+            document.getElementById("preload").style.display="block"
+         }; try { window.onresize() } catch {}
+      })
+     </script>
+   </body>
+ </html>
